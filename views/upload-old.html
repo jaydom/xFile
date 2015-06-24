@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/ng-file-upload-4.2.4/dist/ng-file-upload.min.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/controllers.js"></script>
+  <script src="javascripts/filters.js"></script>
+  <script src="javascripts/services.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+Hello {{info}}!
+<div>
+    watching model:
+    <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
+    <div class="button" ngf-select ngf-change="upload($files)">Upload on file change</div>
+    Drop File:
+    <div ngf-drop ng-model="files" class="drop-box"
+         ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+         ngf-accept="'image/*,application/pdf'">Drop Images or PDFs files here</div>
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+    Image thumbnail: <img ngf-src="files[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
+    Audio preview: <audio controls ngf-src="files[0]" ngf-accept="'audio/*'"></audio>
+    Video preview: <video controls ngf-src="files[0]" ngf-accept="'video/*'"></video>
+</div>
+</body>
+</html>
