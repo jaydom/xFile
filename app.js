@@ -14,8 +14,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
+app.engine('.ejs', ejs.__express);
+app.set('view engine', 'ejs');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -26,6 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 app.get('/', routes.index);
+app.get('/index', routes.index);
+app.get('/index.html', routes.index);
+app.get('/widget/main.html', routes.main);
+app.get('/widget/upload.html', upload.index);
 app.get('/users', users.list);
 app.post('/upload', upload.upload);
 /// catch 404 and forwarding to error handler

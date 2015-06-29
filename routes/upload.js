@@ -4,6 +4,9 @@
 var multiparty  = require('multiparty');
 var fs= require('fs');
 var util = require('util');
+exports.index = function(req, res){
+    res.render('pages/upload', { title: 'Express-Upload' });
+};
 exports.upload = function(req, res){
     console.log(req.body, req.files);
     //生成multiparty对象，并配置下载目标路径
