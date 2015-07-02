@@ -5,7 +5,10 @@ var multiparty  = require('multiparty');
 var fs= require('fs');
 var util = require('util');
 exports.index = function(req, res){
-    res.render('pages/upload', { title: 'Express-Upload' });
+    res.render('pages/upload-step1', { title: 'Express-Upload' });
+};
+exports.step2 = function(req, res){
+    res.render('pages/upload-step2', { title: 'Express-Upload' });
 };
 exports.upload = function(req, res){
     console.log(req.body, req.files);

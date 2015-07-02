@@ -29,7 +29,8 @@ app.get('/', routes.index);
 app.get('/index', routes.index);
 app.get('/index.html', routes.index);
 app.get('/widget/main.html', routes.main);
-app.get('/widget/upload.html', upload.index);
+app.get('/widget/upload-step1.html', upload.index);
+app.get('/widget/upload-step2.html', upload.step2);
 app.get('/users', users.list);
 app.post('/upload', upload.upload);
 /// catch 404 and forwarding to error handler
