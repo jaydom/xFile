@@ -3,7 +3,7 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
         <!-- Box (with bar chart) -->
-        <div class="box box-info" id="loading-example" ng-controller="PhoneListCtrl">
+        <div class="box box-info" id="loading-example" ng-controller="UploadStep1Ctrl">
             <div class="box-body no-padding">
                 <div class="row">
                     <div class="col-sm-2">
@@ -17,7 +17,7 @@
                                 <button class="btn btn-primary"  ngf-select ngf-multiple="true" ngf-change="goToStep2($files)"><i class="fa fa-upload"></i> 上传文件</button>
                             </center>
                         </div><!-- /.xfile-upload -->
-                        <p class="text-center text-comment">从我的电脑选择要上传的文档：按住CTRL可以上传多份文档or直接拖到灰色框中</p>
+                        <p class="text-center text-comment">从我的电脑选择要上传的文档：按住CTRL可以上传多份文档or直接拖到灰色框中{{info}}</p>
                     </div><!-- /.col -->
                     <div class="col-sm-2">
                         <!-- blank -->
